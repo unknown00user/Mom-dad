@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Anniversary Mom Dad 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:'Comic Sans MS', cursive;
+  background:linear-gradient(#ffe6f0,#fff);
+  text-align:center;
+  overflow-x:hidden;
+}
+.screen{
+  display:none;
+  min-height:100vh;
+  padding:60px 20px;
+}
+.screen.active{
+  display:block;
+  animation:fade 0.8s;
+}
+h1,h2{
+  color:#ff4d88;
+}
+p{
+  font-size:1.1rem;
+  line-height:1.8;
+}
+button{
+  margin-top:30px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d88;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 6px 12px rgba(0,0,0,0.2);
+}
+button:active{
+  transform:scale(0.95);
+}
+.gold{
+  color:#c59d2a;
+  font-weight:bold;
+}
+.photos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:14px;
+  margin-top:25px;
+}
+.photos img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 6px 12px rgba(0,0,0,0.2);
+}
+.heart{
+  font-size:2.5rem;
+  animation:pulse 1s infinite;
+}
+#musicBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#ff80ab;
+}
+@keyframes fade{
+  from{opacity:0;transform:scale(0.9)}
+  to{opacity:1;transform:scale(1)}
+}
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" src="music.mp3" loop></audio>
+
+<!-- Screen 1 -->
+<div class="screen active" id="s1">
+  <h1>🎉 Surprise 🎉</h1>
+  <p>Ek choti si pyari si kahani 💕</p>
+  <p>Mom & Dad ke liye 🫶</p>
+  <button onclick="next()">Start 💖</button>
+</div>
+
+<!-- Screen 2 -->
+<div class="screen" id="s2">
+  <h1>💑 Niraj & Renu 💑</h1>
+  <p>💍 Wedding Date</p>
+  <p class="gold">6 February 2006</p>
+  <p class="gold">19 Years of Togetherness ✨</p>
+  <button onclick="next()">Next ➡️</button>
+</div>
+
+<!-- Screen 3 -->
+<div class="screen" id="s3">
+  <h2>💌 From Your Child 💌</h2>
+  <p>
+    Mom Dad ❤️<br><br>
+    Aap dono ka pyaar hi hamari duniya hai 🌍<br>
+    Aapke saath se hi ghar ghar bana 🏡<br><br>
+    Aapne hume sikhaya ki real love
+    chup-chaap har mushkil me saath khada hota hai 🫶<br><br>
+    19 saal ka ye safar sirf time ka nahi,
+    balki pyaar, patience aur blessings ka hai ✨<br><br>
+    Love you always ❤️🧿
+  </p>
+  <button onclick="next()">Memories 📸</button>
+</div>
+
+<!-- Screen 4 -->
+<div class="screen" id="s4">
+  <h2>📸 Sweet Memories 📸</h2>
+  <div class="photos">
+    <img src="photos/p1.jpg">
+    <img src="photos/p2.jpg">
+    <img src="photos/p3.jpg">
+    <img src="photos/p4.jpg">
+    <img src="photos/p5.jpg">
+    <img src="photos/p6.jpg">
+    <img src="photos/p7.jpg">
+    <img src="photos/p8.jpg">
+    <img src="photos/p9.jpg">
+  </div>
+  <button onclick="next()">Last 💕</button>
+</div>
+
+<!-- Screen 5 -->
+<div class="screen" id="s5">
+  <h1>💖 Happy Anniversary 💖</h1>
+  <p>
+    Mom & Dad 👨‍👩‍👧<br>
+    Always together 🫶<br>
+    Always smiling 😊<br>
+    Always blessed 🙏
+  </p>
+  <div class="heart">❤️❤️❤️</div>
+</div>
+
+<button id="musicBtn" onclick="playMusic()">🎵 Music</button>
+
+<script>
+let current=1;
+function next(){
+  document.getElementById("s"+current).classList.remove("active");
+  current++;
+  document.getElementById("s"+current).classList.add("active");
+}
+function playMusic(){
+  document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
